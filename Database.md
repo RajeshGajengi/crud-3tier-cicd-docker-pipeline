@@ -75,3 +75,61 @@ CREATE TABLE `students` (
 
 
 
+<!-- 🗄️ Database Setup (MariaDB on AWS RDS)
+
+This project uses a MariaDB database hosted on AWS RDS.
+
+✅ Step 1: Create the RDS instance
+
+If you haven’t already, create a MariaDB-compatible RDS instance via the AWS Console or using Terraform.
+
+Engine: MariaDB
+
+Port: 3306
+
+Public access: Yes (or configure a proper VPC + security group if running privately)
+
+Database username: e.g., admin
+
+Password: e.g., yourpassword
+
+✅ Step 2: Connect to the RDS instance
+
+Use the MariaDB client to connect to your RDS instance:
+
+mysql -h <RDS_ENDPOINT> -u admin -p
+
+
+You’ll be prompted to enter the password.
+
+✅ Step 3: Create the database
+
+Once connected:
+
+CREATE DATABASE student_db;
+
+
+This will create the database used by the backend Spring Boot application.
+
+⚠️ Make sure the name matches the value in the SPRING_DATASOURCE_URL (e.g., jdbc:mariadb://<RDS_ENDPOINT>:3306/student_db).
+
+✅ Step 4: Grant access (optional)
+
+If using a different DB user than admin, ensure it has privileges on the database:
+
+GRANT ALL PRIVILEGES ON student_db.* TO 'your_user'@'%' IDENTIFIED BY 'your_password';
+FLUSH PRIVILEGES;
+
+📝 Notes:
+
+Make sure the RDS security group allows inbound access on port 3306 from the IP or EC2/Jenkins host.
+
+Ensure the RDS endpoint and credentials are added in Jenkins credentials:
+
+database_url
+
+database_user
+
+database_password 
+
+-->
