@@ -20,7 +20,7 @@ The CI/CD pipeline automates the process of building, testing, and deploying bot
 📄 README.md       → Project documentation  
 ```
 ## Architecture
-[!Architecture Diagram](./Architecture.png)
+![Architecture Diagram](./Architecture.png)
 
 ## Tech Stack
 
