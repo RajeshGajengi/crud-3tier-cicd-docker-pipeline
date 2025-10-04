@@ -167,7 +167,7 @@ pipeline {
     
         stage('Clone Repository') { 
             steps {
-                git branch: 'main', url: 'https://github.com/RajeshGajengi/EasyCRUD-K8s.git'
+                git branch: 'main', url: 'https://github.com/RajeshGajengi/crud-3tier-cicd-docker-pipeline.git'
             }
         }
 
@@ -249,7 +249,7 @@ pipeline {
 
 - Logs into Docker Hub using the stored Docker credentials.
 
-3. **Build Backend Image and Push to Docker Hub**:
+3. **Build & Push Backend Image**:
 
 - Runs the Maven build for the backend and creates a Docker image, which is then pushed to Docker Hub.
 
@@ -257,7 +257,7 @@ pipeline {
 
 - Runs the backend container on port 8081 and passes database credentials as environment variables.
 
-5. **Build Frontend Image and Push to Docker Hub**:
+5. **Build & Push Frontend Image**:
 
 - Installs npm dependencies and creates the frontend Docker image. The image is pushed to Docker Hub.
 
