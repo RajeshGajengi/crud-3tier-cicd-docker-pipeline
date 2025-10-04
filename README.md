@@ -107,7 +107,7 @@ sudo systemctl restart jenkins
 ### 2. Configure Jenkins Credentials
 In Jenkins, add the following credentials under Manage Jenkins → Manage Credentials:
 
- - **docker-cred**: Docker Hub username and password.
+ - **docker_cred**: Docker Hub username and password.
 
  - **database_url**: `jdbc:mariadb://<RDS_Endpoint>:3306/student_db`
 
@@ -173,7 +173,7 @@ pipeline {
 
         stage('Docker Login') { 
             steps {
-                withCredentials([usernamePassword(credentialsId: 'docker-cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'docker_cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                     sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
                 }
             }
