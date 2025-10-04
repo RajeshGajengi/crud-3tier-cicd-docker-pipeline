@@ -19,6 +19,8 @@ The CI/CD pipeline automates the process of building, testing, and deploying bot
 📄 Jenkinsfile     → Jenkins pipeline definition  
 📄 README.md       → Project documentation  
 ```
+## Architecture
+[!Architecture Diagram](./Architecture.png)
 
 ## Tech Stack
 
@@ -34,9 +36,7 @@ The CI/CD pipeline automates the process of building, testing, and deploying bot
 Ensure you have the following tools installed before starting the setup:
  - `Jenkins`: For continuous integration and continuous deployment (CI/CD).
  - `Docker`: To build and run the backend and frontend applications as containers.
- - `Terraform`: For provisioning and managing infrastructure (optional but recommended for cloud deployments).
  - `AWS CLI`: For interacting with AWS services.
- - `Kubernetes`: (Optional) For container orchestration (if you're using Kubernetes).
  - `MariaDB Client`: For connecting to the MariaDB database hosted on AWS RDS.
  - `Java (JDK)`: To build the backend service using Maven.
  - `Node.js`: To build the frontend service with npm.
